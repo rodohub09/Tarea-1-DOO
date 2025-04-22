@@ -1,9 +1,9 @@
 public enum Productos {
-    CocaCola(1, 1000),
-    Sprite(2, 1000),
-    Fanta(3, 1000),
-    Snickers(4, 1300),
-    Super8(5, 600);
+    CocaCola(1, 700),
+    Sprite(2, 700),
+    Fanta(3, 700),
+    Snickers(4, 1000),
+    Super8(5, 400);
 
     private final int num;
     private final int precio;
