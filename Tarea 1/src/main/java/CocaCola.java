@@ -1,5 +1,4 @@
 public class CocaCola extends Bebida{
-
     public CocaCola(int num){
         super(num);
     }
@@ -7,5 +6,4 @@ public class CocaCola extends Bebida{
     public String beber(){
         return "cocacola";
     }
-
 }

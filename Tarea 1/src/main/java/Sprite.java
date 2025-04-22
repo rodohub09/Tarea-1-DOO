@@ -6,5 +6,4 @@ public class Sprite extends Bebida{
     public String beber(){
         return "sprite";
     }
-
 }
