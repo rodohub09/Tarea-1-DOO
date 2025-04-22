@@ -4,18 +4,18 @@ class Expendedor{
     public static final int COCA=1;
     public static final int SPRITE=2;
     private final int precio;
-    Deposito coca;
-    Deposito sprite;
-    DepositoMoneda monVu;
+    Deposito<Bebida> coca;
+    Deposito<Bebida> sprite;
+    Deposito<Moneda> monVu;
 
     public Expendedor(int num, int valor){
-        this.coca=new Deposito();
-        this.sprite=new Deposito();
-        this.monVu=new DepositoMoneda();
+        this.coca=new Deposito<Bebida>();
+        this.sprite=new Deposito<Bebida>();
+        this.monVu=new Deposito<Moneda>();
         this.precio= valor;
         for(int i=0;i<num;i++){
-            coca.addBebida(new CocaCola(100+i));
-            sprite.addBebida(new Sprite(200+i));
+            coca.addItem(new CocaCola(100+i));
+            sprite.addItem(new Sprite(200+i));
         }
 
 
@@ -27,81 +27,39 @@ class Expendedor{
                 case COCA: {
                     if((moneda.getValor()>=precio)&&(!coca.dep.isEmpty())) {
                         for(int i = 0; i < (moneda.getValor() - precio)/100; i++) {
-                            monVu.addMoneda(new Moneda100());
+                            monVu.addItem(new Moneda100());
                         }
-                        return coca.getBebida();
+                        return coca.getItem();
                     }
                     else{
-                        monVu.addMoneda(moneda);
+                        monVu.addItem(moneda);
                         return null;
                     }
                 }
                 case SPRITE: {
                     if((moneda.getValor()>=precio)&&(!sprite.dep.isEmpty())){
                         for(int i = 0; i < (moneda.getValor() - precio)/100; i++) {
-                            monVu.addMoneda(new Moneda100());
+                            monVu.addItem(new Moneda100());
                         }
-                        return sprite.getBebida();
+                        return sprite.getItem();
                     }
                     else{
-                        monVu.addMoneda(moneda);
+                        monVu.addItem(moneda);
                         return null;
                     }
                 }
             }
-            monVu.addMoneda(moneda);
+            monVu.addItem(moneda);
             return null;
         }
         return null;
     }
 
     public Moneda getVuelto(){
-        return monVu.getMoneda();
+        return monVu.getItem();
     }
 }
 
-
-class Deposito{
-    public ArrayList<Bebida> dep;
-
-    public Deposito(){
-        dep= new ArrayList<Bebida>();
-    }
-
-    public void addBebida(Bebida bebida){
-        dep.add(bebida);
-    }
-
-    public Bebida getBebida(){
-        if(dep.isEmpty())
-            return null;
-        else
-            return dep.remove(0);
-    }
-
-}
-
-class DepositoMoneda{
-    private ArrayList<Moneda> dep;
-
-    public DepositoMoneda(){
-        dep = new ArrayList<Moneda>();
-    }
-
-    public void addMoneda(Moneda moneda){
-        dep.add(moneda);
-    }
-
-
-    public Moneda getMoneda(){
-        if(dep.isEmpty())
-            return null;
-        else
-            return dep.remove(0);
-    }
-
-
-}
 
 class Moneda1000 extends Moneda{
     public Moneda1000(){
