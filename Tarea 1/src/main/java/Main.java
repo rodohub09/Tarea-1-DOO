@@ -1,32 +1,5 @@
 import java.util.ArrayList;
 
-class Comprador{
-    private int vuelto;
-    private String sonido;
-
-    public Comprador(Moneda m, int cualBebida, Expendedor exp){
-        Bebida b = exp.comprarBebida(m,cualBebida);
-        if(b!=null)
-            sonido = b.beber();
-        else
-            sonido=null;
-        Moneda mon;
-        while((mon=exp.getVuelto())!=null){
-            vuelto+= mon.getValor();
-        }
-
-
-    }
-
-    public int cuantoVuelto(){
-        return vuelto;
-    }
-
-    public String queBebiste(){
-        return sonido;
-    }
-}
-
 class Expendedor{
     public static final int COCA=1;
     public static final int SPRITE=2;
@@ -127,18 +100,6 @@ class DepositoMoneda{
             return dep.remove(0);
     }
 
-
-}
-
-abstract class Moneda{
-    public Moneda(){
-    }
-
-    public Moneda getSerie(){
-        return this;
-    }
-
-    public abstract int getValor();
 
 }
 
