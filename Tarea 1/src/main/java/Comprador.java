@@ -1,4 +1,4 @@
-class Comprador {
+public class Comprador {
     private int vuelto;
     private String sonido;
 
