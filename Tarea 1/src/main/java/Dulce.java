@@ -1,8 +1,10 @@
 public abstract class Dulce extends Producto {
-
-    public Dulce(int serie){
-        super(serie);
+    public Dulce (Productos p) {
+        super(p);
     }
 
-
+    @Override
+    public String consumir() {
+        return getNombre();
+    }
 }

@@ -5,16 +5,16 @@ public enum Productos {
     Snickers(4, 1000),
     Super8(5, 400);
 
-    private final int num;
+    private final int opcion;
     private final int precio;
 
     Productos (int opcion, int precio) {
-        this.num = opcion;
+        this.opcion = opcion;
         this.precio = precio;
     }
 
-    public int getNum() {
-        return num;
+    public int getOpcion() {
+        return opcion;
     }
 
     public int getPrecio() {
