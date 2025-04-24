@@ -1,8 +1,10 @@
 public abstract class Bebida extends Producto{
-    private int serie;
-
-    public Bebida(int numSerie){
-        super(numSerie);
+    public Bebida (Productos p) {
+        super(p);
     }
 
+    @Override
+    public String consumir() {
+        return getNombre();
+    }
 }

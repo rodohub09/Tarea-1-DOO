@@ -1,12 +1,16 @@
 public abstract class Producto {
-    private int serie;
+    protected Productos tipo;
 
-    public Producto(int serie){
-        this.serie = serie;
+    public Producto(Productos tipo){
+        this.tipo = tipo;
     }
 
-    public int getSerie(){
-        return serie;
+    public int getPrecio(){
+        return tipo.getPrecio();
+    }
+
+    public String getNombre() {
+        return tipo.name();
     }
 
     public abstract String consumir();
