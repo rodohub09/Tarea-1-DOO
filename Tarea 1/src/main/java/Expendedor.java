@@ -25,8 +25,14 @@ public class Expendedor {
         }
     }
 
-    public Producto comprarProducto(Moneda moneda, Productos p){
-        if (moneda == null) return null;
+    public Producto comprarProducto(Moneda moneda, Productos p) throws Exception {
+        if (moneda == null)
+            throw new PagoIncorrectoException();
+
+        if (moneda.getValor()<p.getPrecio()) {
+            monVu.addItem(moneda);
+            throw new PagoInsuficienteException();
+        }
 
         Producto product = null;
         switch (p.getOpcion()) {
@@ -48,14 +54,18 @@ public class Expendedor {
             default:
                 break;
         }
-        if (product != null){
-            for (int i = 0; i < (moneda.getValor() - precio)/100 ; i++) {
+
+        if (product == null) {
+            monVu.addItem(moneda);
+            throw new NoHayProductoException();
+        }
+
+        else {
+            for (int i = 0; i < (moneda.getValor() - precio) / 100; i++) {
                 monVu.addItem(new Moneda100());
             }
-        } else {
-            monVu.addItem(moneda);
+            return product;
         }
-        return product;
     }
 
     public Moneda getVuelto(){
