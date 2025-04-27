@@ -3,6 +3,10 @@ public class Moneda1000 extends Moneda{
         super();
     }
 
+    public int compareTo(Moneda moneda){
+        return this.getSerie().compareTo(moneda.getSerie());
+    }
+
     public int getValor() {
         return 1000;
     }

@@ -1,8 +1,9 @@
-public abstract class Moneda {
+
+public abstract class Moneda implements Comparable<Moneda>{
     public Moneda(){}
 
-    public Moneda getSerie(){
-        return this;
+    public String getSerie(){
+        return this.toString();
     }
 
     public abstract int getValor();
