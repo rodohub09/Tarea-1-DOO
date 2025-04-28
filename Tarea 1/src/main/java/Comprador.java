@@ -1,15 +1,15 @@
 public class Comprador {
     private int vuelto = 0;
-    private String sonido;
+    private String producto;
 
     public Comprador(Moneda m, Productos p, Expendedor exp) throws Exception{
         try {
             Producto product = exp.comprarProducto(m, p);
 
             if (product != null)
-                sonido = product.consumir();
+                producto = product.consumir();
             else
-                sonido = null;
+                producto = null;
         }
         catch (Exception e){
             if (e instanceof PagoIncorrectoException)
@@ -33,7 +33,7 @@ public class Comprador {
         return vuelto;
     }
 
-    public String queBebiste(){
-        return sonido;
+    public String queConsumiste(){
+        return producto;
     }
 }
