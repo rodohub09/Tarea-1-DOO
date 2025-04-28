@@ -9,17 +9,19 @@ public class Comprador {
         else
             producto = null;
 
+
         Moneda mon;
         while ((mon=exp.getVuelto()) != null){
             vuelto += mon.getValor();
         }
     }
 
-    public int cuantoVuelto(){
+    public int cuantoVuelto() {
         return vuelto;
     }
 
     public String queConsumiste(){
         return producto;
+
     }
 }
