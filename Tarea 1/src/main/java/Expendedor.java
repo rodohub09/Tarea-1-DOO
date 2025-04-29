@@ -23,7 +23,7 @@ public class Expendedor {
         }
     }
 
-    public Producto comprarProducto(Moneda moneda, Productos p) throws Exception {
+    public Producto comprarProducto(Moneda moneda, Productos p) throws PagoIncorrectoException,PagoInsuficienteException,NoHayProductoException{
         if (moneda == null)
             throw new PagoIncorrectoException();
 

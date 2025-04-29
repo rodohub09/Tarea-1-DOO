@@ -15,44 +15,50 @@ public class Main {
         try {
             c = new Comprador(m, Productos.CocaCola, exp);
         }
-        catch (Exception e) {
-            if (e instanceof PagoIncorrectoException) {
-                System.out.println("La moneda ingresada no es válida");
-            } else if (e instanceof PagoInsuficienteException) {
-                System.out.println("Saldo insuficiente, compra cancelada");
-            } else if (e instanceof NoHayProductoException) {
-                System.out.println("Producto no disponible, compra cancelada");
-            }
+        catch(PagoIncorrectoException e){
+            System.out.println("La moneda ingresada no es válida");
         }
+        catch(PagoInsuficienteException e){
+                System.out.println("Saldo insuficiente, compra cancelada");
+        }
+        catch(NoHayProductoException e) {
+            System.out.println("Producto no disponible, compra cancelada");
+        }
+
+
         System.out.println("Producto: " + c.queConsumiste() + " - Vuelto: " + c.cuantoVuelto());
 
         m= new Moneda1000();
         try {
             c = new Comprador(m, Productos.Sprite, exp);
         }
-        catch (Exception e) {
-            if (e instanceof PagoIncorrectoException) {
-                System.out.println("La moneda ingresada no es válida");
-            } else if (e instanceof PagoInsuficienteException) {
-                System.out.println("Saldo insuficiente, compra cancelada");
-            } else if (e instanceof NoHayProductoException) {
-                System.out.println("Producto no disponible, compra cancelada");
-            }
+        catch(PagoIncorrectoException e){
+            System.out.println("La moneda ingresada no es válida");
         }
+        catch(PagoInsuficienteException e){
+            System.out.println("Saldo insuficiente, compra cancelada");
+        }
+        catch(NoHayProductoException e) {
+            System.out.println("Producto no disponible, compra cancelada");
+        }
+
+
+
+
         System.out.println("Producto: " + c.queConsumiste() + " - Vuelto: " + c.cuantoVuelto());
 
         m= new Moneda1000();
         try {
             c = new Comprador(m, Productos.Fanta, exp);
         }
-        catch (Exception e) {
-            if (e instanceof PagoIncorrectoException) {
-                System.out.println("La moneda ingresada no es válida");
-            } else if (e instanceof PagoInsuficienteException) {
-                System.out.println("Saldo insuficiente, compra cancelada");
-            } else if (e instanceof NoHayProductoException) {
-                System.out.println("Producto no disponible, compra cancelada");
-            }
+        catch(PagoIncorrectoException e){
+            System.out.println("La moneda ingresada no es válida");
+        }
+        catch(PagoInsuficienteException e){
+            System.out.println("Saldo insuficiente, compra cancelada");
+        }
+        catch(NoHayProductoException e) {
+            System.out.println("Producto no disponible, compra cancelada");
         }
         System.out.println("Producto: " + c.queConsumiste() + " - Vuelto: " + c.cuantoVuelto());
 
@@ -60,14 +66,14 @@ public class Main {
         try {
             c = new Comprador(m, Productos.Snickers, exp);
         }
-        catch (Exception e) {
-            if (e instanceof PagoIncorrectoException) {
-                System.out.println("La moneda ingresada no es válida");
-            } else if (e instanceof PagoInsuficienteException) {
-                System.out.println("Saldo insuficiente, compra cancelada");
-            } else if (e instanceof NoHayProductoException) {
-                System.out.println("Producto no disponible, compra cancelada");
-            }
+        catch(PagoIncorrectoException e){
+            System.out.println("La moneda ingresada no es válida");
+        }
+        catch(PagoInsuficienteException e){
+            System.out.println("Saldo insuficiente, compra cancelada");
+        }
+        catch(NoHayProductoException e) {
+            System.out.println("Producto no disponible, compra cancelada");
         }
         System.out.println("Producto: " + c.queConsumiste() + " - Vuelto: " + c.cuantoVuelto());
 
@@ -75,41 +81,36 @@ public class Main {
         try {
             c = new Comprador(m, Productos.Super8, exp);
         }
-        catch (Exception e) {
-            if (e instanceof PagoIncorrectoException) {
-                System.out.println("La moneda ingresada no es válida");
-            } else if (e instanceof PagoInsuficienteException) {
-                System.out.println("Saldo insuficiente, compra cancelada");
-            } else if (e instanceof NoHayProductoException) {
-                System.out.println("Producto no disponible, compra cancelada");
-            }
+        catch(PagoIncorrectoException e){
+            System.out.println("La moneda ingresada no es válida");
+        }
+        catch(PagoInsuficienteException e){
+            System.out.println("Saldo insuficiente, compra cancelada");
+        }
+        catch(NoHayProductoException e) {
+            System.out.println("Producto no disponible, compra cancelada");
         }
         System.out.println("Producto: " + c.queConsumiste() + " - Vuelto: " + c.cuantoVuelto());
 
 
         for(int i=1; i<=2;i++) {
-            c=null;
             m = new Moneda100();
             try {
                 c = new Comprador(m, Productos.CocaCola, exp);
             }
-            catch (Exception e) {
-                if (e instanceof PagoIncorrectoException) {
-                    System.out.println("La moneda ingresada no es válida");
-                    break;
-                }
-                else if (e instanceof PagoInsuficienteException) {
-                    System.out.println("Saldo insuficiente, compra cancelada");
-                    break;
-                }
-                else if (e instanceof NoHayProductoException) {
-                    System.out.println("Producto no disponible, compra cancelada");
-                    break;
-                }
+            catch(PagoIncorrectoException e){
+                System.out.println("La moneda ingresada no es válida");
+                break;
             }
-
-            if(c!=null)
-                System.out.println(c.queConsumiste()+", "+c.cuantoVuelto());
+            catch(PagoInsuficienteException e){
+                System.out.println("Saldo insuficiente, compra cancelada");
+                break;
+            }
+            catch(NoHayProductoException e) {
+                System.out.println("Producto no disponible, compra cancelada");
+                break;
+            }
+            System.out.println(c.queConsumiste()+", "+c.cuantoVuelto());
         }
 
 
