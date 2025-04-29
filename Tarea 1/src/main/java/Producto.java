@@ -5,10 +5,6 @@ public abstract class Producto {
         this.tipo = tipo;
     }
 
-    public int getPrecio(){
-        return tipo.getPrecio();
-    }
-
     public String getNombre() {
         return tipo.name();
     }
