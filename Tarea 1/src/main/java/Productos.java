@@ -1,3 +1,8 @@
+/*
+* Enum que contiene todos los tipos de productos, los cuales tienen sus respectivos
+* precios y se referencian con un numero
+* */
+
 public enum Productos {
     CocaCola(1, 700),
     Sprite(2, 700),
