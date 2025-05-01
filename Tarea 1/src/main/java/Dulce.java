@@ -1,9 +1,9 @@
-/*
+/**
 * Subclase de {@link Producto}
 */
 public abstract class Dulce extends Producto {
 
-    /*
+    /**
      * Constructor que llama al constructor de la super clase
      * @param p tipo de bebida (Snickers o Super8)
      * */
@@ -11,7 +11,7 @@ public abstract class Dulce extends Producto {
         super(p);
     }
 
-    /*
+    /**
      * Getter del <i>"sabor"</i> del producto.
      * @return tipo de producto en String.
      */

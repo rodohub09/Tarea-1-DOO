@@ -1,15 +1,22 @@
+/**
+ *Clase de los productos que estaran en el expendedor
+ */
+
 public abstract class Producto {
-    //Tipo de producto {@link Productos}
+    /**
+     * Tipo de producto {@link Productos}
+     */
+
     protected Productos tipo;
 
-    /*Constructor
-    *@param Tipo de producto.
+    /**Constructor
+    *@param tipo de producto.
     */
     public Producto(Productos tipo){
         this.tipo = tipo;
     }
 
-    /*
+    /**
     *Getter del del tipo de producto
     *@return nombre del tipo de producto instanciado.
     * */
@@ -17,6 +24,8 @@ public abstract class Producto {
         return tipo.name();
     }
 
-    //Metodo abstracto que devolvera el "sabor" en forma de string del tipo de producto en cuestion.
+    /**
+    *Metodo abstracto que devolvera el "sabor" en forma de string del tipo de producto en cuestion.
+    */
     public abstract String consumir();
 }
