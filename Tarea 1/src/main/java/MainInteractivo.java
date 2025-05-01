@@ -20,7 +20,7 @@ public class MainInteractivo{
         int vuelto;
 
         while (comprar) {
-            System.out.println("-------- Bienvenido a la vaina loca mi xanxi --------\n\n");
+            System.out.println("-------- Bienvenido --------\n\n");
 
             for (int i = 0; i < monedas.size(); i++) {
                 System.out.println((i + 1) + ". Moneda de " + monedas.get(i).getValor());
@@ -62,6 +62,7 @@ public class MainInteractivo{
                 Comprador comprador = new Comprador(moneda, producto, exp);
                 compra = comprador.queConsumiste();
                 vuelto = comprador.cuantoVuelto();
+                System.out.println("Compré " + compra + " y tuve " + vuelto + " de vuelto.");
 
                 System.out.println("¿Desea realizar otra compra?");
                 System.out.println("1. Sí\n2. No");
@@ -70,7 +71,6 @@ public class MainInteractivo{
                     continue;
                 else {
                     System.out.println("Muchas gracias por su preferencia, vuelva pronto!!\n\n");
-                    System.out.println("Compré " + compra + " y tuve " + vuelto + " de vuelto.");
                     comprar = false;
                     break;
                 }
