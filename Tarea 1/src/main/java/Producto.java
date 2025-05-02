@@ -7,7 +7,7 @@ public abstract class Producto {
      * Tipo de producto {@link Productos}
      */
 
-    protected Productos tipo;
+    private Productos tipo;
 
     /**Constructor
     *@param tipo de producto.
