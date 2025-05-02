@@ -6,7 +6,7 @@
 public enum Productos {
 
     /**
-     * Instancias que indican el producto en cuestion, con su numero en la maquina
+     * Propiedades que indican el producto en cuestion, con su numero en la maquina
      * expendedora y su precio.
      * */
     CocaCola(1, 700),

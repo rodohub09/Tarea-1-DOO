@@ -1,4 +1,12 @@
+/**
+ * Maquina expendedora de diversos productos(6), apilados en sus respectivos depositos.
+ */
+
 public class Expendedor {
+
+    /**
+     * Variables privadas de cada {@link Deposito}, con el nombre del producto que almacena.
+     * */
     private Deposito<Bebida> coca;
     private Deposito<Bebida> sprite;
     private Deposito<Bebida> fanta;
@@ -6,6 +14,10 @@ public class Expendedor {
     private Deposito<Dulce> super8;
     private Deposito<Moneda> monVu;
 
+    /**
+     * Constructor
+     * @param stock cantidad de {@link Producto} que pueden almacenar los depositos del expendedor.
+     * */
     public Expendedor(int stock){
         coca = new Deposito<>();
         sprite = new Deposito<>();
@@ -23,6 +35,17 @@ public class Expendedor {
         }
     }
 
+    /**
+     *<p> Refiere a la accion de comprar un producto de la maquina expendedora, pidiendo seleccionar el producto y pagarlo
+     * para posteriormente expulsar dicho producto.</p>
+     * @param moneda {@link Moneda} de pago.
+     *<p>@param p A traves del enum {@link Productos}, se ocupa el numero de opcion, para que la expendedora identifique
+     *          el producto a comprar.</p>
+     * @throws PagoIncorrectoException Lanza esta excepcion, al entregar un <b>valor nulo</b> como moneda.
+     * @throws PagoInsuficienteException Lanza esta excepción, al entregar una moneda con valor <b>menor</b> al precio del producto seleccionado.
+     * @throws NoHayProductoException Lanza esta excepcion, al intentar comprar un producto el cual <b>ya no tiene stock.</b>
+     * @return El producto que se selecciono.
+     * */
     public Producto comprarProducto(Moneda moneda, Productos p) throws PagoIncorrectoException,PagoInsuficienteException,NoHayProductoException{
         if (moneda == null)
             throw new PagoIncorrectoException();
@@ -66,6 +89,10 @@ public class Expendedor {
         }
     }
 
+    /**
+     * Getter del vuelto, osea una moneda con el valor del exceso de pago al comprar un producto.
+     * @return una moneda de vuelto.
+     * */
     public Moneda getVuelto(){
         return monVu.getItem();
     }
