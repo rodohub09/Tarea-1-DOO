@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Deposito<T>{
-    public ArrayList<T> dep = new ArrayList<>();
+    private ArrayList<T> dep = new ArrayList<>();
 
     public void addItem(T item){
         dep.add(item);
@@ -13,5 +13,4 @@ public class Deposito<T>{
         else
             return dep.removeFirst();
     }
-
 }
