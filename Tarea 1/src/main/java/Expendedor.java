@@ -42,10 +42,8 @@ public class Expendedor {
      *<p>@param p A traves del enum {@link Productos}, se ocupa el numero de opcion, para que la expendedora identifique
      *          el producto a comprar.</p>
      * @throws PagoIncorrectoException Lanza esta excepcion, al entregar un <b>valor nulo</b> como moneda.
-     * @throws PagoInsuficienteException <p>Lanza esta excepción, al entregar una moneda con valor <b>menor</b> al precio
-     * del producto seleccionado.</p>
-     * <p>@throws NoHayProductoException Lanza esta excepcion, al intentar comprar un producto el cual <b>ya no tiene
-     * stock.</b></p>
+     * @throws PagoInsuficienteException Lanza esta excepción, al entregar una moneda con valor <b>menor</b> al precio del producto seleccionado.
+     * @throws NoHayProductoException Lanza esta excepcion, al intentar comprar un producto el cual <b>ya no tiene stock.</b>
      * @return El producto que se selecciono.
      * */
     public Producto comprarProducto(Moneda moneda, Productos p) throws PagoIncorrectoException,PagoInsuficienteException,NoHayProductoException{
