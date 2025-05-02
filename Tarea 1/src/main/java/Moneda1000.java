@@ -1,5 +1,5 @@
 /**
- * Subclase de {@link Moneda} con valor 100.
+ * Subclase de {@link Moneda} con valor 1000.
  */
 
 public class Moneda1000 extends Moneda{
