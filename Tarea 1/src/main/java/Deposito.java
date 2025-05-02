@@ -20,7 +20,7 @@ public class Deposito<T>{
 
     /**
      * Getter del producto que esta en el deposito, sacandolo de este.
-     * @return El primer producto(Puntero) del deposito, si no hay productos devuelve un {@link null}.
+     * @return El primer producto(Puntero) del deposito, si no hay productos devuelve null.
      * */
     public T getItem(){
         if (dep.isEmpty())
