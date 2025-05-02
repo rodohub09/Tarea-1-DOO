@@ -7,8 +7,6 @@ public class MainInteractivo{
         Scanner scanner = new Scanner(System.in);
         boolean comprar = true;
 
-
-        label:
         while (comprar) {
             System.out.println("-------- Bienvenido --------\n\n");
 
@@ -56,22 +54,19 @@ public class MainInteractivo{
                 Comprador comprador = new Comprador(moneda, producto, exp);
                 String compra = comprador.queConsumiste();
                 int vuelto = comprador.cuantoVuelto();
-                System.out.println("Compré " + compra + " y tuve " + vuelto + " de vuelto.");
+                System.out.println("Compré " + compra + " y tuve " + vuelto + " de vuelto.\n");
 
 
             } catch (Exception e) {
                 switch (e) {
-                    case PagoIncorrectoException pagoIncorrectoException:
-                        System.out.println("La moneda ingresada no es válida\n");
-                        break;
-                    case PagoInsuficienteException pagoInsuficienteException:
-                        System.out.println("Saldo insuficiente, compra cancelada\n");
-                        break;
-                    case NoHayProductoException noHayProductoException:
-                        System.out.println("Producto no disponible, compra cancelada\n");
-                        break;
-                    default:
-                        break;
+                    case PagoIncorrectoException pagoIncorrectoException ->
+                            System.out.println("La moneda ingresada no es válida\n");
+                    case PagoInsuficienteException pagoInsuficienteException ->
+                            System.out.println("Saldo insuficiente, compra cancelada\n");
+                    case NoHayProductoException noHayProductoException ->
+                            System.out.println("Producto no disponible, compra cancelada\n");
+                    default -> {
+                    }
                 }
             }
 
@@ -86,7 +81,7 @@ public class MainInteractivo{
 
             if (nuevaCompra == 2) comprar = false;
         }
-        System.out.println("Muchas gracias por su preferencia, vuelva pronto!!\n\n");
+        System.out.println("Muchas gracias por su preferencia, vuelva pronto!!\n");
         scanner.close();
         System.exit(0);
     }
