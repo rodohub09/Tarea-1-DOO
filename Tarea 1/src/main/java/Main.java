@@ -2,6 +2,8 @@
  * Main de prueba principal para el {@link Expendedor} de 6 productos con stock de 5. Este recibira unos {@link Comprador}es, que querran comprar un {@link Producto}
  * */
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -196,6 +198,32 @@ public class Main {
         //Se instancia una moneda de valor 1000 en el puntero.
         m = new Moneda100();
         System.out.println("Monedas iguales: " + m.compareTo(n));
+        System.out.println();
+        System.out.println("-Sort de un array con el método compareTo de Moneda-");
+        System.out.println();
+
+        m = new Moneda1000();
+        //Se instancia nuevamente una moneda de valor 1000 en el puntero
+        Moneda s = new Moneda500();
+        //Se crea una tercera variable, instanciando una moneda de valor 500
+        ArrayList<Moneda> list = new ArrayList<>();
+        //Se crea un ArrayList en el cual se añaden las monedas
+        list.add(m);
+        list.add(n);
+        list.add(s);
+
+        System.out.print("Lista sin sort: ");
+        for (Moneda moneda : list) System.out.print(moneda.getValor() + " ");
+        System.out.println();
+
+        //Se realiza un sort en el ArrayList creado usando compareTo de Moneda
+
+        list.sort(Moneda::compareTo);
+
+        System.out.print("Lista con sort: ");
+        for (Moneda moneda : list) System.out.print(moneda.getValor() + " ");
+
+
 
     }
 }
