@@ -199,7 +199,7 @@ public class Main {
         m = new Moneda100();
         System.out.println("Monedas iguales: " + m.compareTo(n));
         System.out.println();
-        System.out.println("-Sort de un array con el método comparaTo de Moneda-");
+        System.out.println("-Sort de un array con el método compareTo de Moneda-");
         System.out.println();
 
         m = new Moneda1000();
